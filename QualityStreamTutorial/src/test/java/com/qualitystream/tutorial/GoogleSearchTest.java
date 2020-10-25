@@ -33,9 +33,9 @@ public class GoogleSearchTest {
 	@Before
 	public void SetUp() {
 		//For linux
-		//System.setProperty("webdriver.chrome.driver", "./src\test\resources\chromedriver_linux\chromedriver");
+		System.setProperty("webdriver.chrome.driver", "./src/test/resources/chromedriver_linux/chromedriver");
 		//For windows 
-		System.setProperty("webdriver.chrome.driver", "./src\\test\\resources\\webdriver_win\\chromedriver.exe");
+		//System.setProperty("webdriver.chrome.driver", "./src\\test\\resources\\webdriver_win\\chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.get("https://farmalisto:Farma19*@test.farmalisto.com.co/");
@@ -51,7 +51,7 @@ public class GoogleSearchTest {
 		//searchbox.submit();
 		//driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
-		assertEquals("Droguería Virtual A Domicilio- 24 Horas Online En Colombia", driver.getTitle());
+		assertEquals("Droguerï¿½a Virtual A Domicilio- 24 Horas Online En Colombia", driver.getTitle());
 
 		//Alert alert = driver.switchTo().alert();
 		//alert.accept();
