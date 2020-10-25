@@ -24,7 +24,8 @@ public class GoogleSearchTest {
 		System.setProperty("webdriver.chrome.driver", "./src\\test\\resources\\webdriver_win\\chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
-		driver.get("https://www.farmalisto.com.co/");
+		driver.get("https://farmalisto:Farma19*@test.farmalisto.com.co/");
+		//driver.get("https://test.farmalisto.com.co/");
 
 	}
 
@@ -38,17 +39,17 @@ public class GoogleSearchTest {
 
 		assertEquals("Droguería Virtual A Domicilio- 24 Horas Online En Colombia", driver.getTitle());
 		
-		WebElement searchbox = driver.findElement(By.id("df-searchbox__dffullscreen"));
-		searchbox.clear();
-		searchbox.sendKeys("Advil");
-		searchbox.submit();
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		//WebElement searchbox = driver.findElement(By.id("df-searchbox__dffullscreen"));
+		//searchbox.clear();
+		//searchbox.sendKeys("Advil");
+		//searchbox.submit();
+		//driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
 	}
 
 	@After
 	public void tearDown() {
-		driver.quit();
+		//driver.quit();
 
 	}
 
