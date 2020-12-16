@@ -9,6 +9,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -33,14 +34,16 @@ public class GoogleSearchTest {
 	@Before
 	public void SetUp() {
 		//For linux
-		System.setProperty("webdriver.chrome.driver", "./src/test/resources/chromedriver_linux/chromedriver");
+		//System.setProperty("webdriver.chrome.driver", "./src/test/resources/chromedriver_linux/chromedriver");
 		//For windows 
-		//System.setProperty("webdriver.chrome.driver", "./src\\test\\resources\\webdriver_win\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "./src\\test\\resources\\webdriver_win\\chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
-		driver.get("https://farmalisto:Farma19*@test.farmalisto.com.co/");
+		//driver.get("https://farmalisto:Farma19*@test.farmalisto.com.co/");
+		driver.get("https://farmalisto:Farma19*@qa.care24.com.co/admin749zzfdw6/");
+		//driver.get("https://qa.care24.com.co/admin749zzfdw6/"); driver.switchTo().alert().sendKeys("farmalisto" + Keys.TAB + "Farma19*"); driver.switchTo().alert().accept(); 
 		//driver.get("https://test.farmalisto.com.co/");
-
+		//https://farmalisto:Farma19*@qa.care24.com.co/
 	}
 
 	@Test
@@ -51,7 +54,7 @@ public class GoogleSearchTest {
 		//searchbox.submit();
 		//driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
-		assertEquals("Droguerï¿½a Virtual A Domicilio- 24 Horas Online En Colombia", driver.getTitle());
+		assertEquals("Droguería Virtual A Domicilio- 24 Horas Online En Colombia", driver.getTitle());
 
 		//Alert alert = driver.switchTo().alert();
 		//alert.accept();
@@ -60,30 +63,30 @@ public class GoogleSearchTest {
 		/*while () {
 			
 		}*/
-		int mail = 8;
-		for (int i = 0; i < 3; i++) {
-			
-			Thread.sleep(6000);
-			driver.findElement(registerLinkLocator).click();
-			Thread.sleep(6000);				
-			if (driver.findElement(registerPageLocator).isDisplayed()) {
-				driver.findElement(emailLocator).sendKeys("juan.tamara@"+mail+".com.co");
-				driver.findElement(nameLocator).sendKeys("Juank Test");
-				driver.findElement(lastNameLocator).sendKeys("Tamara");
-				driver.findElement(passwordLocator).sendKeys("12345678");
-				driver.findElement(repasswordLocator).sendKeys("12345678");
-				driver.findElement(checkLocator).click();
-				driver.findElement(btnRegistrer).click();
-				Thread.sleep(20000);
-				driver.findElement(logOutLocator).click();
-				mail++;
-			} else {
-				
-				System.out.println("No se confrimo el regsitro");
-
-			}
-			
-		}
+//		int mail = 8;
+//		for (int i = 0; i < 3; i++) {
+//			
+//			Thread.sleep(6000);
+//			driver.findElement(registerLinkLocator).click();
+//			Thread.sleep(6000);				
+//			if (driver.findElement(registerPageLocator).isDisplayed()) {
+//				driver.findElement(emailLocator).sendKeys("juan.tamara@"+mail+".com.co");
+//				driver.findElement(nameLocator).sendKeys("Juank Test");
+//				driver.findElement(lastNameLocator).sendKeys("Tamara");
+//				driver.findElement(passwordLocator).sendKeys("12345678");
+//				driver.findElement(repasswordLocator).sendKeys("12345678");
+//				driver.findElement(checkLocator).click();
+//				driver.findElement(btnRegistrer).click();
+//				Thread.sleep(20000);
+//				driver.findElement(logOutLocator).click();
+//				mail++;
+//			} else {
+//				
+//				System.out.println("No se confrimo el regsitro");
+//
+//			}
+//			
+//		}
 		
 
 		
